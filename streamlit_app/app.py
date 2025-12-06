@@ -19,7 +19,8 @@ from utils import (
     reset_network_state,
     get_available_users,
     get_available_models,
-    get_available_regions
+    get_available_regions,
+    get_agent_steps
 )
 
 # Page configuration
@@ -79,6 +80,8 @@ if 'initialized' not in st.session_state:
     st.session_state.initialized = False
     st.session_state.results_history = []
     st.session_state.network_state = None
+    st.session_state.last_result = None  # Store the most recent allocation result
+    st.session_state.show_result = False  # Flag to show result after rerun
 
 # Header
 st.markdown('<div class="main-header">🌐 WirelessAgent Network Slicing</div>', unsafe_allow_html=True)
@@ -225,50 +228,88 @@ with tab1:
         elif not st.session_state.initialized:
             st.warning("Please initialize the system first (use sidebar button)!")
         else:
-            with st.spinner("🔄 Processing request with AI agent..."):
-                result = process_single_user(
-                    user_id=user_id,
-                    request=user_request,
-                    cqi=cqi_value,
-                    location=location
-                )
-                
-                # Update network state
-                st.session_state.network_state = get_network_status()
-                
-                # Add to history
-                st.session_state.results_history.append(result)
-            
-            # Display results
+            # Create progress display area
             st.divider()
-            st.subheader("📋 Allocation Result")
+            st.subheader("🤖 Agent Workflow Progress")
             
-            if result.get('success', False):
-                st.markdown('<div class="success-box">', unsafe_allow_html=True)
+            # Get agent steps
+            agent_steps = get_agent_steps()
+            progress_bar = st.progress(0)
+            
+            # Create status containers for each step
+            step_containers = []
+            for i, step in enumerate(agent_steps):
+                step_containers.append(st.empty())
+                step_containers[i].info(f"⏳ {step['name']}: Waiting...")
+            
+            import time
+            
+            # Simulate step-by-step progress display
+            for i, step in enumerate(agent_steps):
+                # Update current step to "in progress"
+                step_containers[i].warning(f"🔄 {step['name']}: {step['description']}")
+                progress_bar.progress((i + 0.5) / len(agent_steps))
                 
-                result_cols = st.columns(4)
-                with result_cols[0]:
-                    slice_emoji = "📺" if result.get('slice_type') == 'eMBB' else "⚡"
-                    st.metric("Slice Type", f"{slice_emoji} {result.get('slice_type', 'N/A')}")
-                with result_cols[1]:
-                    st.metric("Bandwidth", f"{result.get('bandwidth', 'N/A')} MHz")
-                with result_cols[2]:
-                    st.metric("Rate", f"{result.get('rate', 'N/A')} Mbps")
-                with result_cols[3]:
-                    st.metric("Latency", f"{result.get('latency', 'N/A')} ms")
+                # For the actual processing, only do it on the last step
+                if i == len(agent_steps) - 1:
+                    # Actually process the request
+                    result = process_single_user(
+                        user_id=user_id,
+                        request=user_request,
+                        cqi=cqi_value,
+                        location=location
+                    )
+                else:
+                    time.sleep(0.3)  # Brief pause to show progress
                 
-                st.markdown('</div>', unsafe_allow_html=True)
-                
-                # Intent understanding
-                with st.expander("🧠 AI Intent Analysis", expanded=True):
-                    st.write(f"**Identified Intent:** {result.get('intent', 'N/A')}")
-                    st.write(f"**Ground Truth Match:** {'✅ Correct' if result.get('intent_correct') else '❌ Incorrect' if result.get('intent_correct') is False else '❓ Unknown'}")
-                    if result.get('explanation'):
-                        st.info(result.get('explanation'))
-            else:
-                st.markdown('<div class="error-box">', unsafe_allow_html=True)
-                st.error(f"Allocation failed: {result.get('error', 'Unknown error')}")
-                st.markdown('</div>', unsafe_allow_html=True)
+                # Mark step as complete
+                step_containers[i].success(f"✅ {step['name']}: Complete")
+                progress_bar.progress((i + 1) / len(agent_steps))
+            
+            # Update network state IMMEDIATELY after allocation
+            st.session_state.network_state = get_network_status()
+            
+            # Store result and add to history
+            st.session_state.last_result = result
+            st.session_state.show_result = True
+            st.session_state.results_history.append(result)
+            
+            # Force a rerun to update sidebar network status
+            st.rerun()
+    
+    # Display last result (after rerun)
+    if st.session_state.show_result and st.session_state.last_result:
+        result = st.session_state.last_result
+        
+        st.divider()
+        st.subheader("📋 Allocation Result")
+        
+        if result.get('success', False):
+            st.markdown('<div class="success-box">', unsafe_allow_html=True)
+            
+            result_cols = st.columns(4)
+            with result_cols[0]:
+                slice_emoji = "📺" if result.get('slice_type') == 'eMBB' else "⚡"
+                st.metric("Slice Type", f"{slice_emoji} {result.get('slice_type', 'N/A')}")
+            with result_cols[1]:
+                st.metric("Bandwidth", f"{result.get('bandwidth', 'N/A')} MHz")
+            with result_cols[2]:
+                st.metric("Rate", f"{result.get('rate', 'N/A')} Mbps")
+            with result_cols[3]:
+                st.metric("Latency", f"{result.get('latency', 'N/A')} ms")
+            
+            st.markdown('</div>', unsafe_allow_html=True)
+            
+            # Intent understanding
+            with st.expander("🧠 AI Intent Analysis", expanded=True):
+                st.write(f"**Identified Intent:** {result.get('intent', 'N/A')}")
+                st.write(f"**Ground Truth Match:** {'✅ Correct' if result.get('intent_correct') else '❌ Incorrect' if result.get('intent_correct') is False else '❓ Unknown'}")
+                if result.get('explanation'):
+                    st.info(result.get('explanation'))
+        else:
+            st.markdown('<div class="error-box">', unsafe_allow_html=True)
+            st.error(f"Allocation failed: {result.get('error', 'Unknown error')}")
+            st.markdown('</div>', unsafe_allow_html=True)
 
 # Tab 2: Batch Processing
 with tab2:
@@ -318,14 +359,27 @@ with tab2:
                     batch_results.append(result)
                     st.session_state.results_history.append(result)
                     
+                    # Update network state after each user
+                    st.session_state.network_state = get_network_status()
                     progress_bar.progress((i + 1) / len(available_users))
                 
                 status_text.text("✅ Batch processing complete!")
-                st.session_state.network_state = get_network_status()
                 
-                # Summary
+                # Store batch summary for display
                 success_count = sum(1 for r in batch_results if r.get('success'))
-                st.success(f"Processed {len(batch_results)} users. Success rate: {success_count}/{len(batch_results)}")
+                st.session_state.batch_summary = {
+                    'total': len(batch_results),
+                    'success': success_count,
+                    'results': batch_results
+                }
+                
+                # Force rerun to update sidebar
+                st.rerun()
+    
+    # Display batch summary after rerun
+    if 'batch_summary' in st.session_state and st.session_state.batch_summary:
+        summary = st.session_state.batch_summary
+        st.success(f"✅ Processed {summary['total']} users. Success rate: {summary['success']}/{summary['total']}")
 
 # Tab 3: History & Analytics
 with tab3:

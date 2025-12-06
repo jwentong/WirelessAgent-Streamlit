@@ -252,6 +252,21 @@ def get_available_users(num_users: int = 10) -> list:
         return []
 
 
+# Define agent workflow steps for progress display
+AGENT_STEPS = [
+    {"id": "initialize", "name": "📥 Receiving Request", "description": "Initializing workflow and receiving user request"},
+    {"id": "understand_intent", "name": "🧠 Understanding Intent", "description": "Analyzing user request with Knowledge Base and LLM"},
+    {"id": "allocate_slice_type", "name": "🎯 Selecting Slice Type", "description": "Determining eMBB or URLLC based on requirements"},
+    {"id": "allocate_resources", "name": "📊 Allocating Resources", "description": "Calculating bandwidth, rate, and latency"},
+    {"id": "evaluate_network", "name": "✅ Evaluating Network", "description": "Finalizing allocation and updating network state"},
+]
+
+
+def get_agent_steps() -> list:
+    """Get the list of agent workflow steps for UI display."""
+    return AGENT_STEPS
+
+
 def process_single_user(user_id: str, request: str, cqi: int, location: str = "(0,0,0)") -> dict:
     """
     Process a single user request through the network slicing workflow.
