@@ -8,14 +8,28 @@ import sys
 import os
 import logging
 
-# Add parent directory to path
-parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-if parent_dir not in sys.path:
-    sys.path.insert(0, parent_dir)
+# Add parent directory to path for importing network_slicing module
+# This is needed because app.py is in streamlit_app/ but network_slicing is in parent
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+
+# Also check if we're running from repo root (Streamlit Cloud scenario)
+repo_root = os.getcwd()
+
+# Add all possible paths
+for path in [parent_dir, repo_root]:
+    if path not in sys.path:
+        sys.path.insert(0, path)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Log the paths for debugging
+logger.info(f"Current directory: {current_dir}")
+logger.info(f"Parent directory: {parent_dir}")
+logger.info(f"Repo root (cwd): {repo_root}")
+logger.info(f"sys.path: {sys.path[:5]}")
 
 # Try to import streamlit for secrets
 try:
@@ -25,6 +39,9 @@ except ImportError:
     HAS_STREAMLIT = False
 
 # Import network_slicing modules
+MODULES_AVAILABLE = False
+IMPORT_ERROR = None
+
 try:
     from network_slicing.config import PathConfig, LLMConfig
     from network_slicing.data_io import load_user_data_from_csv
@@ -32,9 +49,16 @@ try:
     from network_slicing.workflow import process_user_request
     from network_slicing.tools import reset_llm
     MODULES_AVAILABLE = True
+    logger.info("Successfully imported network_slicing modules")
 except ImportError as e:
+    IMPORT_ERROR = str(e)
     logger.error(f"Failed to import network_slicing modules: {e}")
-    MODULES_AVAILABLE = False
+    # Try to provide more diagnostic info
+    network_slicing_path = os.path.join(parent_dir, 'network_slicing')
+    logger.error(f"Looking for network_slicing at: {network_slicing_path}")
+    logger.error(f"Path exists: {os.path.exists(network_slicing_path)}")
+    if os.path.exists(parent_dir):
+        logger.error(f"Contents of parent dir: {os.listdir(parent_dir)[:10]}")
 
 
 def _load_api_key_from_secrets() -> str:
@@ -94,7 +118,8 @@ def initialize_system(region: str, model: str) -> tuple:
         tuple: (success: bool, error_message: str or None)
     """
     if not MODULES_AVAILABLE:
-        return False, "Network slicing modules not available. Check if all dependencies are installed."
+        error_detail = f"Network slicing modules not available. Import error: {IMPORT_ERROR}"
+        return False, error_detail
     
     try:
         # Set region

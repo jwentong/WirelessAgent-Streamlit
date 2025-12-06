@@ -11,6 +11,7 @@ numpy>=1.24.0
 # LangChain and LangGraph (from parent project)
 langchain>=0.1.0
 langchain-openai>=0.0.5
+langchain-core>=0.1.0
 langgraph>=0.0.20
 
 # Utilities
