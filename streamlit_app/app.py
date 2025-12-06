@@ -111,13 +111,23 @@ with st.sidebar:
     # Initialize button
     if st.button("🔄 Initialize System", use_container_width=True):
         with st.spinner("Initializing..."):
-            success = initialize_system(selected_region, selected_model)
+            result = initialize_system(selected_region, selected_model)
+            # Handle both old (bool) and new (tuple) return types
+            if isinstance(result, tuple):
+                success, error_msg = result
+            else:
+                success, error_msg = result, None
+            
             if success:
                 st.session_state.initialized = True
                 st.session_state.network_state = get_network_status()
                 st.success("System initialized!")
             else:
-                st.error("Initialization failed!")
+                st.session_state.initialized = False
+                if error_msg:
+                    st.error(f"Initialization failed: {error_msg}")
+                else:
+                    st.error("Initialization failed! Check the logs for details.")
     
     # Reset button
     if st.button("🗑️ Reset Network State", use_container_width=True):

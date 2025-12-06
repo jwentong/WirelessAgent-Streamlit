@@ -39,20 +39,27 @@ except ImportError as e:
 
 def _load_api_key_from_secrets() -> str:
     """Load API key from Streamlit secrets or environment variable"""
+    api_key = None
+    
     # Try Streamlit secrets first
     if HAS_STREAMLIT:
         try:
-            return st.secrets["api"]["DASHSCOPE_API_KEY"]
-        except Exception:
-            pass
+            api_key = st.secrets["api"]["DASHSCOPE_API_KEY"]
+            logger.info("API key loaded from Streamlit secrets")
+        except Exception as e:
+            logger.debug(f"Could not load from Streamlit secrets: {e}")
     
-    # Try environment variable
-    api_key = os.environ.get("DASHSCOPE_API_KEY")
+    # Try environment variable if not found
+    if not api_key:
+        api_key = os.environ.get("DASHSCOPE_API_KEY")
+        if api_key:
+            logger.info("API key loaded from environment variable")
+    
+    # Set as environment variable so config.py can also use it
     if api_key:
-        return api_key
+        os.environ["DASHSCOPE_API_KEY"] = api_key
     
-    # Return None if not found (will use default from config)
-    return None
+    return api_key
 
 
 def get_available_regions() -> list:
@@ -75,7 +82,7 @@ def get_available_models() -> list:
     return ["qwen-turbo-latest", "qwen-plus-latest", "qwen-max-latest"]
 
 
-def initialize_system(region: str, model: str) -> bool:
+def initialize_system(region: str, model: str) -> tuple:
     """
     Initialize the network slicing system with specified configuration.
     
@@ -84,11 +91,10 @@ def initialize_system(region: str, model: str) -> bool:
         model: LLM model name
     
     Returns:
-        bool: True if initialization successful
+        tuple: (success: bool, error_message: str or None)
     """
     if not MODULES_AVAILABLE:
-        logger.error("Network slicing modules not available")
-        return False
+        return False, "Network slicing modules not available. Check if all dependencies are installed."
     
     try:
         # Set region
@@ -100,6 +106,8 @@ def initialize_system(region: str, model: str) -> bool:
         if api_key:
             LLMConfig.set_api_config(api_key=api_key)
             logger.info("API key loaded from secrets")
+        else:
+            logger.warning("No API key found in secrets, using default config")
         
         # Set LLM model
         LLMConfig.set_model(model)
@@ -111,10 +119,13 @@ def initialize_system(region: str, model: str) -> bool:
         state_manager.reset()
         logger.info("State manager initialized")
         
-        return True
+        return True, None
     except Exception as e:
-        logger.error(f"Initialization failed: {e}")
-        return False
+        error_msg = f"Initialization failed: {str(e)}"
+        logger.error(error_msg)
+        import traceback
+        logger.error(traceback.format_exc())
+        return False, error_msg
 
 
 def reset_network_state():

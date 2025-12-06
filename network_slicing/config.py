@@ -110,7 +110,19 @@ class LLMConfig:
             return cls.CONFIG_FILE
         elif os.path.exists(cls.CONFIG_FILE_CLOUD):
             return cls.CONFIG_FILE_CLOUD
-        return cls.CONFIG_FILE
+        # Return cloud file as default even if not found
+        return cls.CONFIG_FILE_CLOUD
+    
+    @classmethod
+    def _get_default_models_config(cls) -> dict:
+        """Get default models configuration when no YAML file is found"""
+        base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+        return {
+            "qwen-flash": {"api_type": "openai", "base_url": base_url, "api_key": "", "temperature": 0},
+            "qwen-turbo-latest": {"api_type": "openai", "base_url": base_url, "api_key": "", "temperature": 0},
+            "qwen-max-latest": {"api_type": "openai", "base_url": base_url, "api_key": "", "temperature": 0},
+            "qwen-plus-latest": {"api_type": "openai", "base_url": base_url, "api_key": "", "temperature": 0},
+        }
     
     @classmethod
     def load_yaml_config(cls, config_path: str = None):
@@ -138,9 +150,16 @@ class LLMConfig:
             logger.info(f"Loaded LLM config from {config_path}")
             logger.info(f"Available models: {list(cls._yaml_config.keys())}")
         except Exception as e:
-            logger.warning(f"Failed to load YAML config: {e}")
-            cls._yaml_config = {}
-            cls._yaml_loaded = False
+            logger.warning(f"Failed to load YAML config from {config_path}: {e}")
+            # Use default configuration
+            cls._yaml_config = cls._get_default_models_config()
+            # Try to get API key from environment
+            env_api_key = os.environ.get("DASHSCOPE_API_KEY")
+            if env_api_key:
+                for model_name in cls._yaml_config:
+                    cls._yaml_config[model_name]['api_key'] = env_api_key
+            cls._yaml_loaded = True
+            logger.info(f"Using default models config. Available models: {list(cls._yaml_config.keys())}")
     
     @classmethod
     def get_available_models(cls) -> list:
