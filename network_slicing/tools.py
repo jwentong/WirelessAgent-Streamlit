@@ -45,14 +45,17 @@ def get_llm() -> ChatOpenAI:
     
     # Recreate LLM if config changed
     if _llm is None or _llm_config_hash != current_hash:
+        api_key = LLMConfig.get_api_key()
         _llm = ChatOpenAI(
-            api_key=LLMConfig.get_api_key(),
+            api_key=api_key,
             base_url=LLMConfig.get_base_url(),
             model=LLMConfig.get_model(),
             temperature=LLMConfig.get_temperature()
         )
         _llm_config_hash = current_hash
-        logger.info(f"LLM initialized with model: {LLMConfig.get_model()}")
+        # Log with masked API key for debugging
+        masked_key = f"{api_key[:8]}...{api_key[-4:]}" if len(api_key) > 12 else "***"
+        logger.info(f"LLM initialized with model: {LLMConfig.get_model()}, API key: {masked_key}")
     
     return _llm
 

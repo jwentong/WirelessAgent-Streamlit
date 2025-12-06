@@ -188,7 +188,9 @@ class LLMConfig:
         if cls._yaml_config and model_name in cls._yaml_config:
             model_config = cls._yaml_config[model_name]
             cls._current_model = model_name
-            cls._current_api_key = model_config.get('api_key', cls.API_KEY)
+            # Only set API key from YAML if not already set (e.g., from Streamlit secrets)
+            if not cls._current_api_key:
+                cls._current_api_key = model_config.get('api_key', cls.API_KEY)
             cls._current_base_url = model_config.get('base_url', cls.BASE_URL)
             cls._current_temperature = model_config.get('temperature', cls.TEMPERATURE)
             logger.info(f"Set model to: {model_name} (from YAML config)")
@@ -216,11 +218,14 @@ class LLMConfig:
     def get_api_key(cls) -> str:
         """Get the current API key (checks runtime config, env var, then default)"""
         if cls._current_api_key:
+            logger.debug(f"Using runtime API key (starts with: {cls._current_api_key[:8]}...)")
             return cls._current_api_key
         # Check environment variable
         env_key = os.environ.get("DASHSCOPE_API_KEY")
         if env_key:
+            logger.debug(f"Using env API key (starts with: {env_key[:8]}...)")
             return env_key
+        logger.debug(f"Using default API key (starts with: {cls.API_KEY[:8]}...)")
         return cls.API_KEY
     
     @classmethod
