@@ -1,0 +1,21 @@
+# Streamlit App Dependencies
+# For WirelessAgent Network Slicing Demo
+
+# Web framework
+streamlit>=1.28.0
+
+# Data processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# LangChain and LangGraph (from parent project)
+langchain>=0.1.0
+langchain-openai>=0.0.5
+langgraph>=0.0.20
+
+# Utilities
+pyyaml>=6.0
+python-dotenv>=1.0.0
+
+# Optional: For deployment
+# gunicorn>=21.0.0

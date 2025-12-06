@@ -1,0 +1,292 @@
+
+========================================================================================================================
+SUMMARY OF USER ALLOCATIONS (MAX USERS: 1)
+========================================================================================================================
+Analyzed first 1 users from the CSV file
+Found 1 eMBB users
+Optimization failed: Positive directional derivative for linesearch
+Using fallback bandwidth allocation method...
+
+Resource allocation successful!
+
+Bandwidth and rate allocation for eMBB users:
+User 1 (CQI=13): 20.00 bandwidth units, 264.25 rate units
+
+Total bandwidth used: 20.00
+Total transmission rate: 264.25
+Resource utilization: 22.22%
+------------------------------------------------------------
+Analyzed first 1 users from the CSV file
+Found 0 URLLC users
+No URLLC users found. Cannot perform bandwidth allocation.
+
+========================================================================================================================
+SUMMARY OF USER ALLOCATIONS (MAX USERS: 5)
+========================================================================================================================
+Analyzed first 5 users from the CSV file
+Found 3 eMBB users
+Optimization failed: Positive directional derivative for linesearch
+Using fallback bandwidth allocation method...
+
+Resource allocation successful!
+
+Bandwidth and rate allocation for eMBB users:
+User 1 (CQI=13): 20.00 bandwidth units, 264.25 rate units
+User 2 (CQI=15): 20.00 bandwidth units, 302.70 rate units
+User 5 (CQI=15): 20.00 bandwidth units, 302.70 rate units
+
+Total bandwidth used: 60.00
+Total transmission rate: 869.66
+Resource utilization: 66.67%
+------------------------------------------------------------
+Analyzed first 5 users from the CSV file
+Found 2 URLLC users
+Optimization failed: Positive directional derivative for linesearch
+Using fallback bandwidth allocation method...
+
+Resource allocation successful!
+
+Bandwidth and rate allocation for URLLC users:
+User 3 (CQI=13): 5.00 bandwidth units, 66.06 rate units
+User 4 (CQI=13): 5.00 bandwidth units, 66.06 rate units
+
+Total bandwidth used: 10.00
+Total transmission rate: 132.12
+Resource utilization: 33.33%
+
+========================================================================================================================
+SUMMARY OF USER ALLOCATIONS (MAX USERS: 10)
+========================================================================================================================
+Analyzed first 10 users from the CSV file
+Found 4 eMBB users
+Optimization failed: Positive directional derivative for linesearch
+Using fallback bandwidth allocation method...
+
+Resource allocation successful!
+
+Bandwidth and rate allocation for eMBB users:
+User 1 (CQI=13): 20.00 bandwidth units, 264.25 rate units
+User 2 (CQI=15): 20.00 bandwidth units, 302.70 rate units
+User 5 (CQI=15): 20.00 bandwidth units, 302.70 rate units
+User 9 (CQI=15): 20.00 bandwidth units, 302.70 rate units
+
+Total bandwidth used: 80.00
+Total transmission rate: 1172.36
+Resource utilization: 88.89%
+------------------------------------------------------------
+Analyzed first 10 users from the CSV file
+Found 6 URLLC users
+
+Resource allocation successful!
+
+Bandwidth and rate allocation for URLLC users:
+User 3 (CQI=13): 5.00 bandwidth units, 66.06 rate units
+User 4 (CQI=13): 5.00 bandwidth units, 66.06 rate units
+User 6 (CQI=15): 5.00 bandwidth units, 75.68 rate units
+User 7 (CQI=15): 5.00 bandwidth units, 75.68 rate units
+User 8 (CQI=15): 5.00 bandwidth units, 75.68 rate units
+User 10 (CQI=13): 5.00 bandwidth units, 66.06 rate units
+
+Total bandwidth used: 30.00
+Total transmission rate: 425.21
+Resource utilization: 100.00%
+
+========================================================================================================================
+SUMMARY OF USER ALLOCATIONS (MAX USERS: 15)
+========================================================================================================================
+Analyzed first 15 users from the CSV file
+Found 7 eMBB users
+
+Resource allocation successful!
+
+Bandwidth and rate allocation for eMBB users:
+User 1 (CQI=13): 12.90 bandwidth units, 170.44 rate units
+User 2 (CQI=15): 12.89 bandwidth units, 195.05 rate units
+User 5 (CQI=15): 12.81 bandwidth units, 193.83 rate units
+User 9 (CQI=15): 12.83 bandwidth units, 194.24 rate units
+User 13 (CQI=15): 12.83 bandwidth units, 194.18 rate units
+User 14 (CQI=15): 12.85 bandwidth units, 194.48 rate units
+User 15 (CQI=15): 12.89 bandwidth units, 195.14 rate units
+
+Total bandwidth used: 90.00
+Total transmission rate: 1337.36
+Resource utilization: 100.00%
+------------------------------------------------------------
+Analyzed first 15 users from the CSV file
+Found 8 URLLC users
+
+Resource allocation successful!
+
+Bandwidth and rate allocation for URLLC users:
+User 3 (CQI=13): 3.75 bandwidth units, 49.57 rate units
+User 4 (CQI=13): 3.75 bandwidth units, 49.56 rate units
+User 6 (CQI=15): 3.75 bandwidth units, 56.75 rate units
+User 7 (CQI=15): 3.75 bandwidth units, 56.75 rate units
+User 8 (CQI=15): 3.75 bandwidth units, 56.75 rate units
+User 10 (CQI=13): 3.75 bandwidth units, 49.50 rate units
+User 11 (CQI=15): 3.75 bandwidth units, 56.76 rate units
+User 12 (CQI=15): 3.75 bandwidth units, 56.79 rate units
+
+Total bandwidth used: 30.00
+Total transmission rate: 432.43
+Resource utilization: 100.00%
+
+========================================================================================================================
+SUMMARY OF USER ALLOCATIONS (MAX USERS: 20)
+========================================================================================================================
+Analyzed first 20 users from the CSV file
+Found 9 eMBB users
+
+Resource allocation successful!
+
+Bandwidth and rate allocation for eMBB users:
+User 1 (CQI=13): 9.99 bandwidth units, 132.05 rate units
+User 2 (CQI=15): 9.99 bandwidth units, 151.26 rate units
+User 5 (CQI=15): 10.00 bandwidth units, 151.36 rate units
+User 9 (CQI=15): 10.00 bandwidth units, 151.38 rate units
+User 13 (CQI=15): 10.00 bandwidth units, 151.39 rate units
+User 14 (CQI=15): 10.00 bandwidth units, 151.39 rate units
+User 15 (CQI=15): 10.00 bandwidth units, 151.38 rate units
+User 16 (CQI=15): 10.00 bandwidth units, 151.37 rate units
+User 19 (CQI=15): 10.00 bandwidth units, 151.36 rate units
+
+Total bandwidth used: 90.00
+Total transmission rate: 1342.95
+Resource utilization: 100.00%
+------------------------------------------------------------
+Analyzed first 20 users from the CSV file
+Found 11 URLLC users
+
+Resource allocation successful!
+
+Bandwidth and rate allocation for URLLC users:
+User 3 (CQI=13): 2.73 bandwidth units, 36.04 rate units
+User 4 (CQI=13): 2.73 bandwidth units, 36.04 rate units
+User 6 (CQI=15): 2.73 bandwidth units, 41.28 rate units
+User 7 (CQI=15): 2.73 bandwidth units, 41.28 rate units
+User 8 (CQI=15): 2.73 bandwidth units, 41.29 rate units
+User 10 (CQI=13): 2.73 bandwidth units, 36.03 rate units
+User 11 (CQI=15): 2.73 bandwidth units, 41.28 rate units
+User 12 (CQI=15): 2.73 bandwidth units, 41.28 rate units
+User 17 (CQI=15): 2.73 bandwidth units, 41.27 rate units
+User 18 (CQI=15): 2.73 bandwidth units, 41.27 rate units
+User 20 (CQI=15): 2.73 bandwidth units, 41.27 rate units
+
+Total bandwidth used: 30.00
+Total transmission rate: 438.32
+Resource utilization: 100.00%
+
+========================================================================================================================
+SUMMARY OF USER ALLOCATIONS (MAX USERS: 25)
+========================================================================================================================
+Analyzed first 25 users from the CSV file
+Found 12 eMBB users
+
+Resource allocation successful!
+
+Bandwidth and rate allocation for eMBB users:
+User 1 (CQI=13): 7.57 bandwidth units, 100.00 rate units
+User 2 (CQI=15): 7.49 bandwidth units, 113.42 rate units
+User 5 (CQI=15): 7.49 bandwidth units, 113.42 rate units
+User 9 (CQI=15): 7.49 bandwidth units, 113.42 rate units
+User 13 (CQI=15): 7.49 bandwidth units, 113.41 rate units
+User 14 (CQI=15): 7.49 bandwidth units, 113.41 rate units
+User 15 (CQI=15): 7.49 bandwidth units, 113.41 rate units
+User 16 (CQI=15): 7.49 bandwidth units, 113.42 rate units
+User 19 (CQI=15): 7.49 bandwidth units, 113.42 rate units
+User 21 (CQI=14): 7.49 bandwidth units, 106.19 rate units
+User 22 (CQI=15): 7.49 bandwidth units, 113.42 rate units
+User 24 (CQI=15): 7.49 bandwidth units, 113.43 rate units
+
+Total bandwidth used: 90.00
+Total transmission rate: 1340.38
+Resource utilization: 100.00%
+------------------------------------------------------------
+Analyzed first 25 users from the CSV file
+Found 13 URLLC users
+
+Resource allocation successful!
+
+Bandwidth and rate allocation for URLLC users:
+User 3 (CQI=13): 2.31 bandwidth units, 30.49 rate units
+User 4 (CQI=13): 2.31 bandwidth units, 30.49 rate units
+User 6 (CQI=15): 2.31 bandwidth units, 34.92 rate units
+User 7 (CQI=15): 2.31 bandwidth units, 34.92 rate units
+User 8 (CQI=15): 2.31 bandwidth units, 34.93 rate units
+User 10 (CQI=13): 2.31 bandwidth units, 30.49 rate units
+User 11 (CQI=15): 2.31 bandwidth units, 34.93 rate units
+User 12 (CQI=15): 2.31 bandwidth units, 34.93 rate units
+User 17 (CQI=15): 2.31 bandwidth units, 34.93 rate units
+User 18 (CQI=15): 2.31 bandwidth units, 34.93 rate units
+User 20 (CQI=15): 2.31 bandwidth units, 34.93 rate units
+User 23 (CQI=15): 2.31 bandwidth units, 34.93 rate units
+User 25 (CQI=15): 2.31 bandwidth units, 34.93 rate units
+
+Total bandwidth used: 30.00
+Total transmission rate: 440.74
+Resource utilization: 100.00%
+
+========================================================================================================================
+SUMMARY OF USER ALLOCATIONS (MAX USERS: 30)
+========================================================================================================================
+Analyzed first 30 users from the CSV file
+Found 14 eMBB users
+Total bandwidth 90.0 is insufficient to meet minimum rate requirements (93.911373658897)
+Standard feasibility check failed. Trying fallback allocation method...
+Warning: User 8 rate 93.56 is below minimum 100.0
+Warning: User 9 rate 85.02 is below minimum 100.0
+Warning: User 10 rate 90.81 is below minimum 100.0
+Warning: User 11 rate 90.81 is below minimum 100.0
+Warning: User 12 rate 90.81 is below minimum 100.0
+Warning: User 13 rate 90.81 is below minimum 100.0
+
+Resource allocation successful!
+
+Bandwidth and rate allocation for eMBB users:
+User 1 (CQI=13): 7.57 bandwidth units, 100.00 rate units
+User 2 (CQI=15): 6.61 bandwidth units, 100.00 rate units
+User 5 (CQI=15): 6.61 bandwidth units, 100.00 rate units
+User 9 (CQI=15): 6.61 bandwidth units, 100.00 rate units
+User 13 (CQI=15): 6.61 bandwidth units, 100.00 rate units
+User 14 (CQI=15): 6.61 bandwidth units, 100.00 rate units
+User 15 (CQI=15): 6.61 bandwidth units, 100.00 rate units
+User 16 (CQI=15): 6.61 bandwidth units, 100.00 rate units
+User 19 (CQI=15): 6.18 bandwidth units, 93.56 rate units
+User 21 (CQI=14): 6.00 bandwidth units, 85.02 rate units
+User 22 (CQI=15): 6.00 bandwidth units, 90.81 rate units
+User 24 (CQI=15): 6.00 bandwidth units, 90.81 rate units
+User 27 (CQI=15): 6.00 bandwidth units, 90.81 rate units
+User 30 (CQI=15): 6.00 bandwidth units, 90.81 rate units
+
+Total bandwidth used: 90.00
+Total transmission rate: 1341.82
+Resource utilization: 100.00%
+------------------------------------------------------------
+Analyzed first 30 users from the CSV file
+Found 16 URLLC users
+
+Resource allocation successful!
+
+Bandwidth and rate allocation for URLLC users:
+User 3 (CQI=13): 1.88 bandwidth units, 24.77 rate units
+User 4 (CQI=13): 1.88 bandwidth units, 24.77 rate units
+User 6 (CQI=15): 1.87 bandwidth units, 28.37 rate units
+User 7 (CQI=15): 1.88 bandwidth units, 28.38 rate units
+User 8 (CQI=15): 1.88 bandwidth units, 28.38 rate units
+User 10 (CQI=13): 1.88 bandwidth units, 24.77 rate units
+User 11 (CQI=15): 1.88 bandwidth units, 28.38 rate units
+User 12 (CQI=15): 1.88 bandwidth units, 28.38 rate units
+User 17 (CQI=15): 1.88 bandwidth units, 28.38 rate units
+User 18 (CQI=15): 1.88 bandwidth units, 28.38 rate units
+User 20 (CQI=15): 1.88 bandwidth units, 28.38 rate units
+User 23 (CQI=15): 1.87 bandwidth units, 28.38 rate units
+User 25 (CQI=15): 1.87 bandwidth units, 28.38 rate units
+User 26 (CQI=15): 1.87 bandwidth units, 28.38 rate units
+User 28 (CQI=15): 1.87 bandwidth units, 28.38 rate units
+User 29 (CQI=15): 1.87 bandwidth units, 28.38 rate units
+
+Total bandwidth used: 30.00
+Total transmission rate: 443.24
+Resource utilization: 100.00%
+
+Results saved to Optimal_RA_Results_north.csv

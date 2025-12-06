@@ -1,0 +1,16 @@
+# Streamlit Cloud Dependencies
+# Core
+streamlit>=1.28.0
+pandas>=2.0.0
+numpy>=1.24.0
+
+# LangChain ecosystem
+langchain>=0.1.0
+langchain-openai>=0.0.5
+langchain-core>=0.1.0
+langgraph>=0.0.20
+
+# Utilities
+pyyaml>=6.0
+
+# Note: API keys should be configured in Streamlit Cloud Secrets

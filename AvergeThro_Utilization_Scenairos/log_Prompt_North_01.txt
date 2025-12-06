@@ -1,0 +1,1288 @@
+Starting prompt-based network slice management system...
+
+Testing 30 users from ray tracing results CSV
+
+----------------------------------------
+PROCESSING USER 1 (1/30)
+Request: "I need real-time traffic updates for navigation"
+CQI: 13
+Ground Truth Slice: eMBB
+----------------------------------------
+
+Intent Analysis: The user needs real-time traffic updates for navigation, which requires low latency to ensure timely updates and reliable communication.
+Recommended Slice: URLLC - URLLC is designed for low-latency and reliable communication, which is essential for real-time traffic updates.
+Bandwidth Allocation: 3 MHz
+Data Rate: 45.0 Mbps
+Latency: 5 ms
+Workload Balanced: Yes
+
+ALLOCATION SUCCESSFUL: All constraints satisfied
+
+----------------------------------------
+ALLOCATION RESULT FOR USER 1
+----------------------------------------
+Network Status @ 2025-04-04 11:39:08
+Total Users: 1
+
+Slice      Users  Resource Usage    Utilization
+-------  -------  ----------------  -------------
+eMBB           0  0/90 MHz          0%
+URLLC          1  3/30 MHz          10.00%
+
+New User Allocation:
+User 1 ¡ú URLLC Slice
+CQI: 13, Bandwidth: 3 MHz, Rate: 45.00 Mbps, Latency: 5 ms
+
+Current User Allocations:
++-----------+---------+-------+------------+---------------+----------------+----------+
+|   User ID | Slice   |   CQI |   BW (MHz) |   Rate (Mbps) |   Latency (ms) | Status   |
++===========+=========+=======+============+===============+================+==========+
+|         1 | URLLC   |    13 |          3 |            45 |              5 | NEW      |
++-----------+---------+-------+------------+---------------+----------------+----------+
+
+----------------------------------------
+PROCESSING USER 2 (2/30)
+Request: "I want to stream a live sports event in HD"
+CQI: 15
+Ground Truth Slice: eMBB
+----------------------------------------
+
+Intent Analysis: The user wants to stream a live sports event in HD, which requires high bandwidth and moderate latency for smooth video playback.
+Recommended Slice: eMBB - HD video streaming is a high bandwidth application that fits within the eMBB slice's capabilities, which is designed for enhanced mobile broadband services.
+Bandwidth Allocation: 10 MHz
+Data Rate: 150.0 Mbps
+Latency: 50 ms
+Workload Balanced: Yes
+
+ALLOCATION SUCCESSFUL: All constraints satisfied
+
+----------------------------------------
+ALLOCATION RESULT FOR USER 2
+----------------------------------------
+Network Status @ 2025-04-04 11:39:21
+Total Users: 2
+
+Slice      Users  Resource Usage    Utilization
+-------  -------  ----------------  -------------
+eMBB           1  10/90 MHz         11.11%
+URLLC          1  3/30 MHz          10.00%
+
+New User Allocation:
+User 2 ¡ú eMBB Slice
+CQI: 15, Bandwidth: 10 MHz, Rate: 150.00 Mbps, Latency: 50 ms
+
+Current User Allocations:
++-----------+---------+-------+------------+---------------+----------------+----------+
+|   User ID | Slice   |   CQI |   BW (MHz) |   Rate (Mbps) |   Latency (ms) | Status   |
++===========+=========+=======+============+===============+================+==========+
+|         1 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         2 | eMBB    |    15 |         10 |           150 |             50 | NEW      |
++-----------+---------+-------+------------+---------------+----------------+----------+
+
+----------------------------------------
+PROCESSING USER 3 (3/30)
+Request: "I need real-time fraud detection for financial transactions"
+CQI: 13
+Ground Truth Slice: URLLC
+----------------------------------------
+
+Intent Analysis: The user requires real-time fraud detection for financial transactions, which is a low-latency, high-reliability application that needs immediate processing and response.
+Recommended Slice: URLLC - URLLC is designed for applications requiring ultra-reliable low-latency communications, which is essential for real-time fraud detection in financial transactions.
+Bandwidth Allocation: 3 MHz
+Data Rate: 45.0 Mbps
+Latency: 5 ms
+Workload Balanced: Yes
+
+ALLOCATION SUCCESSFUL: All constraints satisfied
+
+----------------------------------------
+ALLOCATION RESULT FOR USER 3
+----------------------------------------
+Network Status @ 2025-04-04 11:39:36
+Total Users: 3
+
+Slice      Users  Resource Usage    Utilization
+-------  -------  ----------------  -------------
+eMBB           1  10/90 MHz         11.11%
+URLLC          2  6/30 MHz          20.00%
+
+New User Allocation:
+User 3 ¡ú URLLC Slice
+CQI: 13, Bandwidth: 3 MHz, Rate: 45.00 Mbps, Latency: 5 ms
+
+Current User Allocations:
++-----------+---------+-------+------------+---------------+----------------+----------+
+|   User ID | Slice   |   CQI |   BW (MHz) |   Rate (Mbps) |   Latency (ms) | Status   |
++===========+=========+=======+============+===============+================+==========+
+|         1 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         3 | URLLC   |    13 |          3 |            45 |              5 | NEW      |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         2 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+
+----------------------------------------
+PROCESSING USER 4 (4/30)
+Request: "I need emergency response coordination during a disaste"
+CQI: 13
+Ground Truth Slice: URLLC
+----------------------------------------
+
+Intent Analysis: The user needs emergency response coordination during a disaster, which requires reliable and low-latency communication for real-time coordination and control.
+Recommended Slice: URLLC - Emergency response coordination requires ultra-reliable low-latency communications to ensure real-time data transmission and control, which is the primary use case for URLLC.
+Bandwidth Allocation: 3 MHz
+Data Rate: 45.0 Mbps
+Latency: 5 ms
+Workload Balanced: Yes
+
+ALLOCATION SUCCESSFUL: All constraints satisfied
+
+----------------------------------------
+ALLOCATION RESULT FOR USER 4
+----------------------------------------
+Network Status @ 2025-04-04 11:39:48
+Total Users: 4
+
+Slice      Users  Resource Usage    Utilization
+-------  -------  ----------------  -------------
+eMBB           1  10/90 MHz         11.11%
+URLLC          3  9/30 MHz          30.00%
+
+New User Allocation:
+User 4 ¡ú URLLC Slice
+CQI: 13, Bandwidth: 3 MHz, Rate: 45.00 Mbps, Latency: 5 ms
+
+Current User Allocations:
++-----------+---------+-------+------------+---------------+----------------+----------+
+|   User ID | Slice   |   CQI |   BW (MHz) |   Rate (Mbps) |   Latency (ms) | Status   |
++===========+=========+=======+============+===============+================+==========+
+|         1 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         3 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         4 | URLLC   |    13 |          3 |            45 |              5 | NEW      |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         2 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+
+----------------------------------------
+PROCESSING USER 5 (5/30)
+Request: "I want to use augmented reality navigation"
+CQI: 15
+Ground Truth Slice: eMBB
+----------------------------------------
+
+Intent Analysis: The user wants to use augmented reality navigation, which requires high bandwidth for real-time video processing and data transmission, but also benefits from low latency for responsive interaction.
+Recommended Slice: eMBB - Augmented reality navigation primarily requires high bandwidth for video streaming and data transfer, which aligns with eMBB capabilities. While low latency is beneficial, the primary need is bandwidth.
+Bandwidth Allocation: 10 MHz
+Data Rate: 150.0 Mbps
+Latency: 50 ms
+Workload Balanced: Yes
+
+ALLOCATION SUCCESSFUL: All constraints satisfied
+
+----------------------------------------
+ALLOCATION RESULT FOR USER 5
+----------------------------------------
+Network Status @ 2025-04-04 11:40:01
+Total Users: 5
+
+Slice      Users  Resource Usage    Utilization
+-------  -------  ----------------  -------------
+eMBB           2  20/90 MHz         22.22%
+URLLC          3  9/30 MHz          30.00%
+
+New User Allocation:
+User 5 ¡ú eMBB Slice
+CQI: 15, Bandwidth: 10 MHz, Rate: 150.00 Mbps, Latency: 50 ms
+
+Current User Allocations:
++-----------+---------+-------+------------+---------------+----------------+----------+
+|   User ID | Slice   |   CQI |   BW (MHz) |   Rate (Mbps) |   Latency (ms) | Status   |
++===========+=========+=======+============+===============+================+==========+
+|         1 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         3 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         4 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         2 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         5 | eMBB    |    15 |         10 |           150 |             50 | NEW      |
++-----------+---------+-------+------------+---------------+----------------+----------+
+
+----------------------------------------
+PROCESSING USER 6 (6/30)
+Request: "I need vehicle-to-vehicle collision avoidance systems"
+CQI: 15
+Ground Truth Slice: URLLC
+----------------------------------------
+
+Intent Analysis: The user requires vehicle-to-vehicle collision avoidance systems, which demand ultra-low latency and high reliability to ensure real-time communication and quick response times for safety.
+Recommended Slice: URLLC - Vehicle-to-vehicle collision avoidance systems require ultra-reliable low-latency communications (URLLC) to ensure real-time data transmission with minimal delay, which is critical for safety applications.
+Bandwidth Allocation: 5 MHz
+Data Rate: 75.0 Mbps
+Latency: 5 ms
+Workload Balanced: No
+
+ALLOCATION SUCCESSFUL: All constraints satisfied
+
+----------------------------------------
+ALLOCATION RESULT FOR USER 6
+----------------------------------------
+Network Status @ 2025-04-04 11:40:16
+Total Users: 6
+
+Slice      Users  Resource Usage    Utilization
+-------  -------  ----------------  -------------
+eMBB           2  20/90 MHz         22.22%
+URLLC          4  14/30 MHz         46.67%
+
+New User Allocation:
+User 6 ¡ú URLLC Slice
+CQI: 15, Bandwidth: 5 MHz, Rate: 75.00 Mbps, Latency: 5 ms
+
+Current User Allocations:
++-----------+---------+-------+------------+---------------+----------------+----------+
+|   User ID | Slice   |   CQI |   BW (MHz) |   Rate (Mbps) |   Latency (ms) | Status   |
++===========+=========+=======+============+===============+================+==========+
+|         1 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         3 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         4 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         6 | URLLC   |    15 |          5 |            75 |              5 | NEW      |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         2 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         5 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+
+----------------------------------------
+PROCESSING USER 7 (7/30)
+Request: "I need microsecond-level latency for high-frequency tradin"
+CQI: 15
+Ground Truth Slice: URLLC
+----------------------------------------
+
+Intent Analysis: The user requires microsecond-level latency for high-frequency trading, which is a critical application demanding ultra-reliable low-latency communications.
+Recommended Slice: URLLC - High-frequency trading requires ultra-low latency (1-10ms) and reliability, which aligns with the URLLC slice characteristics.
+Bandwidth Allocation: 5 MHz
+Data Rate: 75.0 Mbps
+Latency: 1 ms
+Workload Balanced: No
+
+ALLOCATION SUCCESSFUL: All constraints satisfied
+
+----------------------------------------
+ALLOCATION RESULT FOR USER 7
+----------------------------------------
+Network Status @ 2025-04-04 11:40:28
+Total Users: 7
+
+Slice      Users  Resource Usage    Utilization
+-------  -------  ----------------  -------------
+eMBB           2  20/90 MHz         22.22%
+URLLC          5  19/30 MHz         63.33%
+
+New User Allocation:
+User 7 ¡ú URLLC Slice
+CQI: 15, Bandwidth: 5 MHz, Rate: 75.00 Mbps, Latency: 1 ms
+
+Current User Allocations:
++-----------+---------+-------+------------+---------------+----------------+----------+
+|   User ID | Slice   |   CQI |   BW (MHz) |   Rate (Mbps) |   Latency (ms) | Status   |
++===========+=========+=======+============+===============+================+==========+
+|         1 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         3 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         4 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         6 | URLLC   |    15 |          5 |            75 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         7 | URLLC   |    15 |          5 |            75 |              1 | NEW      |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         2 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         5 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+
+----------------------------------------
+PROCESSING USER 8 (8/30)
+Request: "I need to balance electrical load in real-time across microgrids"
+CQI: 15
+Ground Truth Slice: URLLC
+----------------------------------------
+
+Intent Analysis: The user needs to balance electrical load in real-time across microgrids, which requires low latency and high reliability to ensure timely and accurate control signals.
+Recommended Slice: URLLC - The application requires real-time control with low latency, which is the primary characteristic of URLLC.
+Bandwidth Allocation: 5 MHz
+Data Rate: 75.0 Mbps
+Latency: 5 ms
+Workload Balanced: No
+
+ALLOCATION SUCCESSFUL: All constraints satisfied
+
+----------------------------------------
+ALLOCATION RESULT FOR USER 8
+----------------------------------------
+Network Status @ 2025-04-04 11:40:43
+Total Users: 8
+
+Slice      Users  Resource Usage    Utilization
+-------  -------  ----------------  -------------
+eMBB           2  20/90 MHz         22.22%
+URLLC          6  24/30 MHz         80.00%
+
+New User Allocation:
+User 8 ¡ú URLLC Slice
+CQI: 15, Bandwidth: 5 MHz, Rate: 75.00 Mbps, Latency: 5 ms
+
+Current User Allocations:
++-----------+---------+-------+------------+---------------+----------------+----------+
+|   User ID | Slice   |   CQI |   BW (MHz) |   Rate (Mbps) |   Latency (ms) | Status   |
++===========+=========+=======+============+===============+================+==========+
+|         1 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         3 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         4 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         6 | URLLC   |    15 |          5 |            75 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         7 | URLLC   |    15 |          5 |            75 |              1 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         8 | URLLC   |    15 |          5 |            75 |              5 | NEW      |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         2 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         5 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+
+----------------------------------------
+PROCESSING USER 9 (9/30)
+Request: "I want to participate in a virtual reality gaming session"
+CQI: 15
+Ground Truth Slice: eMBB
+----------------------------------------
+
+Intent Analysis: The user wants to participate in a virtual reality gaming session, which requires high bandwidth and low latency to ensure a smooth and immersive experience.
+Recommended Slice: eMBB - Virtual reality gaming requires high bandwidth for high-quality video streaming and moderate latency for real-time interaction, which aligns with eMBB capabilities.
+Bandwidth Allocation: 10 MHz
+Data Rate: 150.0 Mbps
+Latency: 50 ms
+Workload Balanced: No
+
+ALLOCATION SUCCESSFUL: All constraints satisfied
+
+----------------------------------------
+ALLOCATION RESULT FOR USER 9
+----------------------------------------
+Network Status @ 2025-04-04 11:40:55
+Total Users: 9
+
+Slice      Users  Resource Usage    Utilization
+-------  -------  ----------------  -------------
+eMBB           3  30/90 MHz         33.33%
+URLLC          6  24/30 MHz         80.00%
+
+New User Allocation:
+User 9 ¡ú eMBB Slice
+CQI: 15, Bandwidth: 10 MHz, Rate: 150.00 Mbps, Latency: 50 ms
+
+Current User Allocations:
++-----------+---------+-------+------------+---------------+----------------+----------+
+|   User ID | Slice   |   CQI |   BW (MHz) |   Rate (Mbps) |   Latency (ms) | Status   |
++===========+=========+=======+============+===============+================+==========+
+|         1 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         3 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         4 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         6 | URLLC   |    15 |          5 |            75 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         7 | URLLC   |    15 |          5 |            75 |              1 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         8 | URLLC   |    15 |          5 |            75 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         2 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         5 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         9 | eMBB    |    15 |         10 |           150 |             50 | NEW      |
++-----------+---------+-------+------------+---------------+----------------+----------+
+
+----------------------------------------
+PROCESSING USER 10 (10/30)
+Request: "I need to control precision CNC machines with zero tolerance for delay"
+CQI: 13
+Ground Truth Slice: URLLC
+----------------------------------------
+
+Intent Analysis: The user needs to control precision CNC machines with zero tolerance for delay, indicating a requirement for ultra-reliable low-latency communications.
+Recommended Slice: URLLC - The application requires low latency and high reliability, which are the primary characteristics of URLLC.
+Bandwidth Allocation: 2 MHz
+Data Rate: 30.0 Mbps
+Latency: 5 ms
+Workload Balanced: No
+
+ALLOCATION SUCCESSFUL: All constraints satisfied
+
+----------------------------------------
+ALLOCATION RESULT FOR USER 10
+----------------------------------------
+Network Status @ 2025-04-04 11:41:06
+Total Users: 10
+
+Slice      Users  Resource Usage    Utilization
+-------  -------  ----------------  -------------
+eMBB           3  30/90 MHz         33.33%
+URLLC          7  26/30 MHz         86.67%
+
+New User Allocation:
+User 10 ¡ú URLLC Slice
+CQI: 13, Bandwidth: 2 MHz, Rate: 30.00 Mbps, Latency: 5 ms
+
+Current User Allocations:
++-----------+---------+-------+------------+---------------+----------------+----------+
+|   User ID | Slice   |   CQI |   BW (MHz) |   Rate (Mbps) |   Latency (ms) | Status   |
++===========+=========+=======+============+===============+================+==========+
+|         1 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        10 | URLLC   |    13 |          2 |            30 |              5 | NEW      |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         3 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         4 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         6 | URLLC   |    15 |          5 |            75 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         7 | URLLC   |    15 |          5 |            75 |              1 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         8 | URLLC   |    15 |          5 |            75 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         2 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         5 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         9 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+
+----------------------------------------
+PROCESSING USER 11 (11/30)
+Request: "I need reliable communication for firefighters inside buildings"
+CQI: 15
+Ground Truth Slice: URLLC
+----------------------------------------
+
+Intent Analysis: The user requires reliable communication for firefighters inside buildings, which is a critical application needing low latency and high reliability.
+Recommended Slice: URLLC - Firefighter communication requires ultra-reliable low-latency communication (URLLC) to ensure real-time and reliable data transmission in critical situations.
+Bandwidth Allocation: 4 MHz
+Data Rate: 60.0 Mbps
+Latency: 5 ms
+Workload Balanced: No
+
+ALLOCATION SUCCESSFUL: All constraints satisfied
+
+----------------------------------------
+ALLOCATION RESULT FOR USER 11
+----------------------------------------
+Network Status @ 2025-04-04 11:41:20
+Total Users: 11
+
+Slice      Users  Resource Usage    Utilization
+-------  -------  ----------------  -------------
+eMBB           3  30/90 MHz         33.33%
+URLLC          8  30/30 MHz         100.00%
+
+New User Allocation:
+User 11 ¡ú URLLC Slice
+CQI: 15, Bandwidth: 4 MHz, Rate: 60.00 Mbps, Latency: 5 ms
+
+Current User Allocations:
++-----------+---------+-------+------------+---------------+----------------+----------+
+|   User ID | Slice   |   CQI |   BW (MHz) |   Rate (Mbps) |   Latency (ms) | Status   |
++===========+=========+=======+============+===============+================+==========+
+|         1 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        10 | URLLC   |    13 |          2 |            30 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        11 | URLLC   |    15 |          4 |            60 |              5 | NEW      |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         3 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         4 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         6 | URLLC   |    15 |          5 |            75 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         7 | URLLC   |    15 |          5 |            75 |              1 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         8 | URLLC   |    15 |          5 |            75 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         2 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         5 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         9 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+
+----------------------------------------
+PROCESSING USER 12 (12/30)
+Request: "I need to balance electrical load in real-time across microgrids"
+CQI: 15
+Ground Truth Slice: URLLC
+----------------------------------------
+
+Intent Analysis: The user needs to balance electrical load in real-time across microgrids, which requires low latency and high reliability for real-time control and monitoring.
+Recommended Slice: URLLC - The application requires real-time control with low latency, which is the primary characteristic of URLLC.
+Bandwidth Allocation: 5 MHz
+Data Rate: 75.0 Mbps
+Latency: 5 ms
+Workload Balanced: No
+
+----------------------------------------
+ALLOCATION FAILED FOR USER 12
+----------------------------------------
+Request: I need to balance electrical load in real-time across microgrids
+Slice type: URLLC
+Reason: LLM determined it cannot accommodate user based on current network state
+
+----------------------------------------
+PROCESSING USER 13 (13/30)
+Request: "I need to check weather forecasts"
+CQI: 15
+Ground Truth Slice: eMBB
+----------------------------------------
+
+Intent Analysis: The user needs to check weather forecasts, which is a moderate bandwidth application that doesn't require ultra-low latency. This is a typical web browsing/data access use case.
+Recommended Slice: eMBB - Weather checking requires moderate bandwidth but doesn't have strict latency requirements, making eMBB the appropriate choice. URLLC is already at 100% utilization and is designed for ultra-low latency applications which this use case doesn't require.
+Bandwidth Allocation: 6 MHz
+Data Rate: 90.0 Mbps
+Latency: 50 ms
+Workload Balanced: Yes
+
+CONSTRAINT VIOLATION DETECTED:
+- eMBB data rate must be 100-400 Mbps (calculated: 90.00 Mbps)
+
+----------------------------------------
+ALLOCATION FAILED FOR USER 13
+----------------------------------------
+Request: I need to check weather forecasts
+Slice type: eMBB
+Reason: Constraint violation: eMBB data rate must be 100-400 Mbps (calculated: 90.00 Mbps)
+Violation Type: Constraint Violation
+Attempted values: Bandwidth 6 MHz, Rate 90.0 Mbps, Latency 50 ms
+
+----------------------------------------
+PROCESSING USER 14 (14/30)
+Request: "I want to stream a live sports event in HD"
+CQI: 15
+Ground Truth Slice: eMBB
+----------------------------------------
+
+Intent Analysis: The user wants to stream a live sports event in HD, which requires high bandwidth and moderate latency for smooth video playback.
+Recommended Slice: eMBB - HD video streaming is a high bandwidth application that fits within the eMBB slice's capabilities, which is designed for such use cases.
+Bandwidth Allocation: 10 MHz
+Data Rate: 150.0 Mbps
+Latency: 50 ms
+Workload Balanced: No
+
+ALLOCATION SUCCESSFUL: All constraints satisfied
+
+----------------------------------------
+ALLOCATION RESULT FOR USER 14
+----------------------------------------
+Network Status @ 2025-04-04 11:41:59
+Total Users: 12
+
+Slice      Users  Resource Usage    Utilization
+-------  -------  ----------------  -------------
+eMBB           4  40/90 MHz         44.44%
+URLLC          8  30/30 MHz         100.00%
+
+New User Allocation:
+User 14 ¡ú eMBB Slice
+CQI: 15, Bandwidth: 10 MHz, Rate: 150.00 Mbps, Latency: 50 ms
+
+Current User Allocations:
++-----------+---------+-------+------------+---------------+----------------+----------+
+|   User ID | Slice   |   CQI |   BW (MHz) |   Rate (Mbps) |   Latency (ms) | Status   |
++===========+=========+=======+============+===============+================+==========+
+|         1 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        10 | URLLC   |    13 |          2 |            30 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        11 | URLLC   |    15 |          4 |            60 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         3 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         4 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         6 | URLLC   |    15 |          5 |            75 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         7 | URLLC   |    15 |          5 |            75 |              1 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         8 | URLLC   |    15 |          5 |            75 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        14 | eMBB    |    15 |         10 |           150 |             50 | NEW      |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         2 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         5 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         9 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+
+----------------------------------------
+PROCESSING USER 15 (15/30)
+Request: "I want to stream music while browsing social media"
+CQI: 15
+Ground Truth Slice: eMBB
+----------------------------------------
+
+Intent Analysis: The user wants to stream music while browsing social media, which requires moderate bandwidth and can tolerate some latency. This is typical for general internet usage with multimedia content.
+Recommended Slice: eMBB - Streaming music and browsing social media are high bandwidth applications that fit within the eMBB slice's capabilities. URLLC is not suitable as it is optimized for low latency and the user's needs don't require ultra-low latency.
+Bandwidth Allocation: 10 MHz
+Data Rate: 150.0 Mbps
+Latency: 50 ms
+Workload Balanced: No
+
+ALLOCATION SUCCESSFUL: All constraints satisfied
+
+----------------------------------------
+ALLOCATION RESULT FOR USER 15
+----------------------------------------
+Network Status @ 2025-04-04 11:42:14
+Total Users: 13
+
+Slice      Users  Resource Usage    Utilization
+-------  -------  ----------------  -------------
+eMBB           5  50/90 MHz         55.56%
+URLLC          8  30/30 MHz         100.00%
+
+New User Allocation:
+User 15 ¡ú eMBB Slice
+CQI: 15, Bandwidth: 10 MHz, Rate: 150.00 Mbps, Latency: 50 ms
+
+Current User Allocations:
++-----------+---------+-------+------------+---------------+----------------+----------+
+|   User ID | Slice   |   CQI |   BW (MHz) |   Rate (Mbps) |   Latency (ms) | Status   |
++===========+=========+=======+============+===============+================+==========+
+|         1 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        10 | URLLC   |    13 |          2 |            30 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        11 | URLLC   |    15 |          4 |            60 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         3 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         4 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         6 | URLLC   |    15 |          5 |            75 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         7 | URLLC   |    15 |          5 |            75 |              1 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         8 | URLLC   |    15 |          5 |            75 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        14 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        15 | eMBB    |    15 |         10 |           150 |             50 | NEW      |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         2 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         5 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         9 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+
+----------------------------------------
+PROCESSING USER 16 (16/30)
+Request: "I want to use holographic communication"
+CQI: 15
+Ground Truth Slice: eMBB
+----------------------------------------
+
+Intent Analysis: The user wants to use holographic communication, which requires high bandwidth and relatively low latency for real-time interaction.
+Recommended Slice: eMBB - Holographic communication requires high bandwidth for data transmission and can tolerate moderate latency, making eMBB the most suitable slice.
+Bandwidth Allocation: 10 MHz
+Data Rate: 150.0 Mbps
+Latency: 50 ms
+Workload Balanced: No
+
+ALLOCATION SUCCESSFUL: All constraints satisfied
+
+----------------------------------------
+ALLOCATION RESULT FOR USER 16
+----------------------------------------
+Network Status @ 2025-04-04 11:42:26
+Total Users: 14
+
+Slice      Users  Resource Usage    Utilization
+-------  -------  ----------------  -------------
+eMBB           6  60/90 MHz         66.67%
+URLLC          8  30/30 MHz         100.00%
+
+New User Allocation:
+User 16 ¡ú eMBB Slice
+CQI: 15, Bandwidth: 10 MHz, Rate: 150.00 Mbps, Latency: 50 ms
+
+Current User Allocations:
++-----------+---------+-------+------------+---------------+----------------+----------+
+|   User ID | Slice   |   CQI |   BW (MHz) |   Rate (Mbps) |   Latency (ms) | Status   |
++===========+=========+=======+============+===============+================+==========+
+|         1 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        10 | URLLC   |    13 |          2 |            30 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        11 | URLLC   |    15 |          4 |            60 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         3 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         4 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         6 | URLLC   |    15 |          5 |            75 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         7 | URLLC   |    15 |          5 |            75 |              1 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         8 | URLLC   |    15 |          5 |            75 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        14 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        15 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        16 | eMBB    |    15 |         10 |           150 |             50 | NEW      |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         2 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         5 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         9 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+
+----------------------------------------
+PROCESSING USER 17 (17/30)
+Request: "I need immediate machine shutdown capability for safety incidents"
+CQI: 15
+Ground Truth Slice: URLLC
+----------------------------------------
+
+Intent Analysis: The user requires immediate machine shutdown capability for safety incidents, which is a critical low-latency application requiring ultra-reliable communication.
+Recommended Slice: URLLC - The request involves safety-critical operations requiring ultra-low latency and high reliability, which are the primary characteristics of URLLC.
+Bandwidth Allocation: 5 MHz
+Data Rate: 75.0 Mbps
+Latency: 5 ms
+Workload Balanced: No
+
+----------------------------------------
+ALLOCATION FAILED FOR USER 17
+----------------------------------------
+Request: I need immediate machine shutdown capability for safety incidents
+Slice type: URLLC
+Reason: LLM determined it cannot accommodate user based on current network state
+
+----------------------------------------
+PROCESSING USER 18 (18/30)
+Request: "I need my autonomous vehicle to communicate in real time"
+CQI: 15
+Ground Truth Slice: URLLC
+----------------------------------------
+
+Intent Analysis: The user requires real-time communication for an autonomous vehicle, which demands ultra-low latency and high reliability.
+Recommended Slice: URLLC - URLLC is designed for applications requiring ultra-reliable low-latency communications, such as autonomous vehicle control.
+Bandwidth Allocation: 5 MHz
+Data Rate: 75.0 Mbps
+Latency: 5 ms
+Workload Balanced: No
+
+----------------------------------------
+ALLOCATION FAILED FOR USER 18
+----------------------------------------
+Request: I need my autonomous vehicle to communicate in real time
+Slice type: URLLC
+Reason: LLM determined it cannot accommodate user based on current network state
+
+----------------------------------------
+PROCESSING USER 19 (19/30)
+Request: "I want to stream a live sports event in HD"
+CQI: 15
+Ground Truth Slice: eMBB
+----------------------------------------
+
+Intent Analysis: The user wants to stream a live sports event in HD, which requires high bandwidth and moderate latency for smooth video playback.
+Recommended Slice: eMBB - HD video streaming is a high bandwidth application that fits within the eMBB slice's capabilities, which is designed for such use cases.
+Bandwidth Allocation: 10 MHz
+Data Rate: 150.0 Mbps
+Latency: 50 ms
+Workload Balanced: No
+
+ALLOCATION SUCCESSFUL: All constraints satisfied
+
+----------------------------------------
+ALLOCATION RESULT FOR USER 19
+----------------------------------------
+Network Status @ 2025-04-04 11:43:05
+Total Users: 15
+
+Slice      Users  Resource Usage    Utilization
+-------  -------  ----------------  -------------
+eMBB           7  70/90 MHz         77.78%
+URLLC          8  30/30 MHz         100.00%
+
+New User Allocation:
+User 19 ¡ú eMBB Slice
+CQI: 15, Bandwidth: 10 MHz, Rate: 150.00 Mbps, Latency: 50 ms
+
+Current User Allocations:
++-----------+---------+-------+------------+---------------+----------------+----------+
+|   User ID | Slice   |   CQI |   BW (MHz) |   Rate (Mbps) |   Latency (ms) | Status   |
++===========+=========+=======+============+===============+================+==========+
+|         1 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        10 | URLLC   |    13 |          2 |            30 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        11 | URLLC   |    15 |          4 |            60 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         3 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         4 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         6 | URLLC   |    15 |          5 |            75 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         7 | URLLC   |    15 |          5 |            75 |              1 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         8 | URLLC   |    15 |          5 |            75 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        14 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        15 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        16 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        19 | eMBB    |    15 |         10 |           150 |             50 | NEW      |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         2 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         5 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         9 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+
+----------------------------------------
+PROCESSING USER 20 (20/30)
+Request: "I need reliable connectivity for implanted medical devices"
+CQI: 15
+Ground Truth Slice: URLLC
+----------------------------------------
+
+Intent Analysis: The user requires reliable connectivity for implanted medical devices, which is a critical application requiring ultra-reliable low-latency communication.
+Recommended Slice: URLLC - Implanted medical devices require ultra-reliable low-latency communication, which is the primary use case for URLLC.
+Bandwidth Allocation: 5 MHz
+Data Rate: 75.0 Mbps
+Latency: 5 ms
+Workload Balanced: No
+
+----------------------------------------
+ALLOCATION FAILED FOR USER 20
+----------------------------------------
+Request: I need reliable connectivity for implanted medical devices
+Slice type: URLLC
+Reason: LLM determined it cannot accommodate user based on current network state
+
+----------------------------------------
+PROCESSING USER 21 (21/30)
+Request: "I want to use augmented reality navigation"
+CQI: 14
+Ground Truth Slice: eMBB
+----------------------------------------
+
+Intent Analysis: The user wants to use augmented reality navigation, which requires high bandwidth for real-time video processing and moderate latency for smooth user experience.
+Recommended Slice: eMBB - Augmented reality navigation requires high bandwidth for video streaming and can tolerate moderate latency, making eMBB the most suitable slice.
+Bandwidth Allocation: 10 MHz
+Data Rate: 150.0 Mbps
+Latency: 50 ms
+Workload Balanced: No
+
+ALLOCATION SUCCESSFUL: All constraints satisfied
+
+----------------------------------------
+ALLOCATION RESULT FOR USER 21
+----------------------------------------
+Network Status @ 2025-04-04 11:43:30
+Total Users: 16
+
+Slice      Users  Resource Usage    Utilization
+-------  -------  ----------------  -------------
+eMBB           8  80/90 MHz         88.89%
+URLLC          8  30/30 MHz         100.00%
+
+New User Allocation:
+User 21 ¡ú eMBB Slice
+CQI: 14, Bandwidth: 10 MHz, Rate: 150.00 Mbps, Latency: 50 ms
+
+Current User Allocations:
++-----------+---------+-------+------------+---------------+----------------+----------+
+|   User ID | Slice   |   CQI |   BW (MHz) |   Rate (Mbps) |   Latency (ms) | Status   |
++===========+=========+=======+============+===============+================+==========+
+|         1 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        10 | URLLC   |    13 |          2 |            30 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        11 | URLLC   |    15 |          4 |            60 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         3 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         4 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         6 | URLLC   |    15 |          5 |            75 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         7 | URLLC   |    15 |          5 |            75 |              1 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         8 | URLLC   |    15 |          5 |            75 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        14 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        15 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        16 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        19 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         2 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        21 | eMBB    |    14 |         10 |           150 |             50 | NEW      |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         5 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         9 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+
+----------------------------------------
+PROCESSING USER 22 (22/30)
+Request: "I want to stream music while browsing social media"
+CQI: 15
+Ground Truth Slice: eMBB
+----------------------------------------
+
+Intent Analysis: The user wants to stream music while browsing social media, which requires moderate bandwidth and can tolerate some latency. This is typical for general internet usage with multimedia content.
+Recommended Slice: eMBB - Streaming music and browsing social media are high bandwidth applications that fit within the eMBB slice's capabilities. The URLLC slice is already at full capacity and is not suitable for this type of application.
+Bandwidth Allocation: 10 MHz
+Data Rate: 150.0 Mbps
+Latency: 50 ms
+Workload Balanced: No
+
+ALLOCATION SUCCESSFUL: All constraints satisfied
+
+----------------------------------------
+ALLOCATION RESULT FOR USER 22
+----------------------------------------
+Network Status @ 2025-04-04 11:43:44
+Total Users: 17
+
+Slice      Users  Resource Usage    Utilization
+-------  -------  ----------------  -------------
+eMBB           9  90/90 MHz         100.00%
+URLLC          8  30/30 MHz         100.00%
+
+New User Allocation:
+User 22 ¡ú eMBB Slice
+CQI: 15, Bandwidth: 10 MHz, Rate: 150.00 Mbps, Latency: 50 ms
+
+Current User Allocations:
++-----------+---------+-------+------------+---------------+----------------+----------+
+|   User ID | Slice   |   CQI |   BW (MHz) |   Rate (Mbps) |   Latency (ms) | Status   |
++===========+=========+=======+============+===============+================+==========+
+|         1 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        10 | URLLC   |    13 |          2 |            30 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        11 | URLLC   |    15 |          4 |            60 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         3 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         4 | URLLC   |    13 |          3 |            45 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         6 | URLLC   |    15 |          5 |            75 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         7 | URLLC   |    15 |          5 |            75 |              1 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         8 | URLLC   |    15 |          5 |            75 |              5 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        14 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        15 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        16 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        19 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         2 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        21 | eMBB    |    14 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|        22 | eMBB    |    15 |         10 |           150 |             50 | NEW      |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         5 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+|         9 | eMBB    |    15 |         10 |           150 |             50 |          |
++-----------+---------+-------+------------+---------------+----------------+----------+
+
+----------------------------------------
+PROCESSING USER 23 (23/30)
+Request: "I need to balance electrical load in real-time across microgrids"
+CQI: 15
+Ground Truth Slice: URLLC
+----------------------------------------
+
+Intent Analysis: The user needs to balance electrical load in real-time across microgrids, which requires low latency and high reliability to ensure timely and accurate control signals.
+Recommended Slice: URLLC - The application requires real-time control with low latency, which is best served by the URLLC slice.
+Bandwidth Allocation: 5 MHz
+Data Rate: 75.0 Mbps
+Latency: 5 ms
+Workload Balanced: No
+
+----------------------------------------
+ALLOCATION FAILED FOR USER 23
+----------------------------------------
+Request: I need to balance electrical load in real-time across microgrids
+Slice type: URLLC
+Reason: LLM determined it cannot accommodate user based on current network state
+
+----------------------------------------
+PROCESSING USER 24 (24/30)
+Request: "I want to browse websites and check email"
+CQI: 15
+Ground Truth Slice: eMBB
+----------------------------------------
+
+Intent Analysis: The user wants to browse websites and check email, which are typical internet browsing activities requiring moderate bandwidth and not extremely low latency.
+Recommended Slice: eMBB - Browsing websites and checking email are best suited for the eMBB slice, which provides higher bandwidth suitable for internet activities. URLLC is more suited for applications requiring ultra-low latency, which is not critical here.
+Bandwidth Allocation: 6 MHz
+Data Rate: 90.0 Mbps
+Latency: 50 ms
+Workload Balanced: No
+
+CONSTRAINT VIOLATION DETECTED:
+- eMBB data rate must be 100-400 Mbps (calculated: 90.00 Mbps)
+
+----------------------------------------
+ALLOCATION FAILED FOR USER 24
+----------------------------------------
+Request: I want to browse websites and check email
+Slice type: eMBB
+Reason: Constraint violation: eMBB data rate must be 100-400 Mbps (calculated: 90.00 Mbps)
+Violation Type: Constraint Violation
+Attempted values: Bandwidth 6 MHz, Rate 90.0 Mbps, Latency 50 ms
+
+----------------------------------------
+PROCESSING USER 25 (25/30)
+Request: "I need to deploy early warning systems for natural disasters"
+CQI: 15
+Ground Truth Slice: URLLC
+----------------------------------------
+
+Intent Analysis: The user needs to deploy early warning systems for natural disasters, which requires reliable and low-latency communication to ensure timely alerts and responses.
+Recommended Slice: URLLC - Early warning systems require ultra-reliable low-latency communications to ensure timely and accurate alerts, which aligns with the URLLC slice characteristics.
+Bandwidth Allocation: 5 MHz
+Data Rate: 75.0 Mbps
+Latency: 5 ms
+Workload Balanced: No
+
+----------------------------------------
+ALLOCATION FAILED FOR USER 25
+----------------------------------------
+Request: I need to deploy early warning systems for natural disasters
+Slice type: URLLC
+Reason: LLM determined it cannot accommodate user based on current network state
+
+----------------------------------------
+PROCESSING USER 26 (26/30)
+Request: "I need to deploy early warning systems for natural disasters"
+CQI: 15
+Ground Truth Slice: URLLC
+----------------------------------------
+
+Intent Analysis: The user needs to deploy early warning systems for natural disasters, which requires reliable and low-latency communication to ensure timely alerts and responses.
+Recommended Slice: URLLC - Early warning systems require ultra-reliable low-latency communications to ensure timely and accurate alerts, which aligns with the URLLC slice characteristics.
+Bandwidth Allocation: 5 MHz
+Data Rate: 75.0 Mbps
+Latency: 5 ms
+Workload Balanced: No
+
+----------------------------------------
+ALLOCATION FAILED FOR USER 26
+----------------------------------------
+Request: I need to deploy early warning systems for natural disasters
+Slice type: URLLC
+Reason: LLM determined it cannot accommodate user based on current network state
+
+----------------------------------------
+PROCESSING USER 27 (27/30)
+Request: "I want to watch 4K video"
+CQI: 15
+Ground Truth Slice: eMBB
+----------------------------------------
+
+Intent Analysis: The user wants to watch 4K video, which requires high bandwidth and falls under the category of high data rate applications.
+Recommended Slice: eMBB - 4K video streaming requires high bandwidth and falls under the eMBB slice category which is designed for high data rate applications like video streaming.
+Bandwidth Allocation: 20 MHz
+Data Rate: 300.0 Mbps
+Latency: 50 ms
+Workload Balanced: No
+
+----------------------------------------
+ALLOCATION FAILED FOR USER 27
+----------------------------------------
+Request: I want to watch 4K video
+Slice type: eMBB
+Reason: LLM determined it cannot accommodate user based on current network state
+
+----------------------------------------
+PROCESSING USER 28 (28/30)
+Request: "I need to monitor IoT sensors in real-time"
+CQI: 15
+Ground Truth Slice: URLLC
+----------------------------------------
+
+Intent Analysis: The user needs to monitor IoT sensors in real-time, which requires low latency and reliable communication for timely data collection and response.
+Recommended Slice: URLLC - URLLC is designed for applications requiring ultra-reliable low-latency communications, which is ideal for real-time IoT sensor monitoring.
+Bandwidth Allocation: 5 MHz
+Data Rate: 75.0 Mbps
+Latency: 5 ms
+Workload Balanced: No
+
+----------------------------------------
+ALLOCATION FAILED FOR USER 28
+----------------------------------------
+Request: I need to monitor IoT sensors in real-time
+Slice type: URLLC
+Reason: LLM determined it cannot accommodate user based on current network state
+
+----------------------------------------
+PROCESSING USER 29 (29/30)
+Request: "I need to detect and isolate power grid faults instantly"
+CQI: 15
+Ground Truth Slice: URLLC
+----------------------------------------
+
+Intent Analysis: The user needs to detect and isolate power grid faults instantly, which requires ultra-reliable low-latency communication for real-time monitoring and control.
+Recommended Slice: URLLC - The application requires low latency and high reliability, which are the key characteristics of URLLC.
+Bandwidth Allocation: 5 MHz
+Data Rate: 75.0 Mbps
+Latency: 5 ms
+Workload Balanced: No
+
+----------------------------------------
+ALLOCATION FAILED FOR USER 29
+----------------------------------------
+Request: I need to detect and isolate power grid faults instantly
+Slice type: URLLC
+Reason: LLM determined it cannot accommodate user based on current network state
+
+----------------------------------------
+PROCESSING USER 30 (30/30)
+Request: "I want to monitor my home security cameras remotely"
+CQI: 15
+Ground Truth Slice: eMBB
+----------------------------------------
+
+Intent Analysis: The user wants to monitor home security cameras remotely, which requires reliable and low-latency communication for real-time video monitoring.
+Recommended Slice: URLLC - Remote monitoring of security cameras requires low latency and reliable communication, which aligns with URLLC's characteristics.
+Bandwidth Allocation: 5 MHz
+Data Rate: 75.0 Mbps
+Latency: 5 ms
+Workload Balanced: No
+
+----------------------------------------
+ALLOCATION FAILED FOR USER 30
+----------------------------------------
+Request: I want to monitor my home security cameras remotely
+Slice type: URLLC
+Reason: LLM determined it cannot accommodate user based on current network state
+
+============================================================
+SUMMARY OF USER ALLOCATIONS
+============================================================
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|   User ID | Status   | Slice   | Ground Truth   | Intent Match   |   CQI |   BW (MHz) |   Rate (Mbps) |   Latency (ms) | Constraint Viol.   |
++===========+==========+=========+================+================+=======+============+===============+================+====================+
+|         1 | Success  | URLLC   | eMBB           | No             |    13 |          3 |            45 |              5 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|         2 | Success  | eMBB    | eMBB           | Yes            |    15 |         10 |           150 |             50 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|         3 | Success  | URLLC   | URLLC          | Yes            |    13 |          3 |            45 |              5 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|         4 | Success  | URLLC   | URLLC          | Yes            |    13 |          3 |            45 |              5 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|         5 | Success  | eMBB    | eMBB           | Yes            |    15 |         10 |           150 |             50 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|         6 | Success  | URLLC   | URLLC          | Yes            |    15 |          5 |            75 |              5 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|         7 | Success  | URLLC   | URLLC          | Yes            |    15 |          5 |            75 |              1 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|         8 | Success  | URLLC   | URLLC          | Yes            |    15 |          5 |            75 |              5 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|         9 | Success  | eMBB    | eMBB           | Yes            |    15 |         10 |           150 |             50 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|        10 | Success  | URLLC   | URLLC          | Yes            |    13 |          2 |            30 |              5 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|        11 | Success  | URLLC   | URLLC          | Yes            |    15 |          4 |            60 |              5 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|        12 | Failed   | URLLC   | URLLC          |                |    15 |          5 |            75 |              5 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|        13 | Failed   | eMBB    | eMBB           |                |    15 |          6 |            90 |             50 | Yes                |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|        14 | Success  | eMBB    | eMBB           | Yes            |    15 |         10 |           150 |             50 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|        15 | Success  | eMBB    | eMBB           | Yes            |    15 |         10 |           150 |             50 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|        16 | Success  | eMBB    | eMBB           | Yes            |    15 |         10 |           150 |             50 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|        17 | Failed   | URLLC   | URLLC          |                |    15 |          5 |            75 |              5 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|        18 | Failed   | URLLC   | URLLC          |                |    15 |          5 |            75 |              5 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|        19 | Success  | eMBB    | eMBB           | Yes            |    15 |         10 |           150 |             50 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|        20 | Failed   | URLLC   | URLLC          |                |    15 |          5 |            75 |              5 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|        21 | Success  | eMBB    | eMBB           | Yes            |    14 |         10 |           150 |             50 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|        22 | Success  | eMBB    | eMBB           | Yes            |    15 |         10 |           150 |             50 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|        23 | Failed   | URLLC   | URLLC          |                |    15 |          5 |            75 |              5 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|        24 | Failed   | eMBB    | eMBB           |                |    15 |          6 |            90 |             50 | Yes                |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|        25 | Failed   | URLLC   | URLLC          |                |    15 |          5 |            75 |              5 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|        26 | Failed   | URLLC   | URLLC          |                |    15 |          5 |            75 |              5 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|        27 | Failed   | eMBB    | eMBB           |                |    15 |         20 |           300 |             50 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|        28 | Failed   | URLLC   | URLLC          |                |    15 |          5 |            75 |              5 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|        29 | Failed   | URLLC   | URLLC          |                |    15 |          5 |            75 |              5 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+|        30 | Failed   | URLLC   | eMBB           |                |    15 |          5 |            75 |              5 | No                 |
++-----------+----------+---------+----------------+----------------+-------+------------+---------------+----------------+--------------------+
+
+Statistics:
+Total users processed: 30
+Success rate: 17/30 (56.7%)
+eMBB allocations: 12 (40.0%)
+URLLC allocations: 18 (60.0%)
+Constraint violations: 2/30 (6.7%)
+
+Intent Understanding Evaluation:
+Correctly identified intents: 16/17
+Intent understanding rate: 94.1%
+
+Slice Utilization Statistics:
+Average eMBB utilization: 38.56%
+Average URLLC utilization: 68.04%
+
+Results exported to prompt_based_slicing_results_north.csv

@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.env
+
+# Streamlit secrets (contains API keys)
+.streamlit/secrets.toml
+streamlit_app/.streamlit/secrets.toml
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# CSV results (keep sample data in network_slicing/)
+network_slicing_results*.csv
+
+# Keep config2.yaml for cloud deployment (uses env vars)
+# Local config with actual API keys - DO NOT COMMIT
+network_slicing/config2.yaml

@@ -1,0 +1,25 @@
+# LLM Model Configuration Template
+# NOTE: API keys should be set via Streamlit Secrets or environment variables
+# Do NOT commit actual API keys to Git
+
+models:
+  "qwen-flash":  
+    api_type: "openai"  
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    api_key: "${DASHSCOPE_API_KEY}"
+    temperature: 0
+  "qwen-turbo-latest":  
+    api_type: "openai"  
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    api_key: "${DASHSCOPE_API_KEY}"
+    temperature: 0
+  "qwen-max-latest":  
+    api_type: "openai"  
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    api_key: "${DASHSCOPE_API_KEY}"
+    temperature: 0
+  "qwen-plus-latest":  
+    api_type: "openai"  
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    api_key: "${DASHSCOPE_API_KEY}"
+    temperature: 0
