@@ -150,9 +150,15 @@ def initialize_system(region: str, model: str) -> tuple:
         PathConfig.set_region(region)
         logger.info(f"Set region to: {region}")
         
-        # Try to load API key from secrets
+        # Try to load API key from secrets - MUST happen before set_model()
         api_key = _load_api_key_from_secrets()
         if api_key:
+            # Set API key directly (bypasses YAML config loading issues)
+            LLMConfig.set_api_config(api_key=api_key)
+            # Also reload YAML config with env var now set
+            LLMConfig._yaml_loaded = False  # Force reload
+            LLMConfig.load_yaml_config()
+            # Re-set API key after YAML load (in case YAML overwrote it)
             LLMConfig.set_api_config(api_key=api_key)
             logger.info("API key loaded from secrets")
         else:
