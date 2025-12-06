@@ -69,21 +69,45 @@ def _load_api_key_from_secrets() -> str:
     if HAS_STREAMLIT:
         try:
             api_key = st.secrets["api"]["DASHSCOPE_API_KEY"]
-            logger.info("API key loaded from Streamlit secrets")
+            logger.info(f"API key loaded from Streamlit secrets (length: {len(api_key)})")
         except Exception as e:
-            logger.debug(f"Could not load from Streamlit secrets: {e}")
+            logger.warning(f"Could not load from Streamlit secrets: {e}")
+            # Try alternative secret formats
+            try:
+                api_key = st.secrets.get("DASHSCOPE_API_KEY")
+                if api_key:
+                    logger.info(f"API key loaded from Streamlit secrets (root level)")
+            except Exception:
+                pass
     
     # Try environment variable if not found
     if not api_key:
         api_key = os.environ.get("DASHSCOPE_API_KEY")
         if api_key:
-            logger.info("API key loaded from environment variable")
+            logger.info(f"API key loaded from environment variable (length: {len(api_key)})")
+    
+    if not api_key:
+        logger.warning("No API key found in secrets or environment variables!")
     
     # Set as environment variable so config.py can also use it
     if api_key:
         os.environ["DASHSCOPE_API_KEY"] = api_key
     
     return api_key
+
+
+# Try to load API key early (before module imports that might need it)
+_early_api_key = None
+if HAS_STREAMLIT:
+    try:
+        _early_api_key = st.secrets.get("api", {}).get("DASHSCOPE_API_KEY")
+        if not _early_api_key:
+            _early_api_key = st.secrets.get("DASHSCOPE_API_KEY")
+        if _early_api_key:
+            os.environ["DASHSCOPE_API_KEY"] = _early_api_key
+            logger.info("Early API key loading successful")
+    except Exception as e:
+        logger.debug(f"Early API key loading failed: {e}")
 
 
 def get_available_regions() -> list:
